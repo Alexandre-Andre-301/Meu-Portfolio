@@ -1,0 +1,29 @@
+.matrix-background {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.matrix-number {
+    position: absolute;
+
+    top: -10%;
+
+    font-family: "Fira Code", monospace;
+    font-size: 1rem;
+    font-weight: bold;
+
+    color: #c084fc;
+
+    opacity: .15;
+
+    text-shadow: 0 0 10px #a855f7;
+}

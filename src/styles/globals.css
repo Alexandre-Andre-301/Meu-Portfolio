@@ -1,0 +1,133 @@
+:root {
+    /* Background */
+    --bg-primary: #08080b;
+    --bg-secondary: #101014;
+    --bg-card: #141419;
+
+    /* Primary */
+    --primary: #9b5cff;
+    --primary-hover: #b47aff;
+    --primary-glow: rgba(155, 92, 255, 0.35);
+
+    /* Text */
+    --text-primary: #f5f5f5;
+    --text-secondary: #9ca3af;
+
+    /* Status */
+    --success: #22c55e;
+
+    /* Border */
+    --border: #25252d;
+
+    /* Effects */
+    --transition: all 0.3s ease;
+
+    /* Shadows */
+    --shadow-card:
+        0 20px 40px rgba(0,0,0,0.45);
+}
+
+
+/* Reset */
+body{
+    background:#0a0a0c;
+}
+
+#root{
+    position: relative;
+    min-height:100vh;
+    isolation:isolate;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: var(--bg-primary);
+
+    color: var(--text-primary);
+
+    font-family:
+    "Inter",
+    sans-serif;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+button {
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+}
+
+
+/* Container global */
+
+.container {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 30px;
+
+}
+
+
+/* Títulos */
+
+.highlight {
+
+    color: var(--primary);
+
+    text-shadow:
+    0 0 20px var(--primary-glow);
+
+}
+
+
+/* Secções */
+
+.section {
+
+    padding: 100px 0;
+
+}
+
+
+.section-title {
+
+    font-size: clamp(2rem,5vw,3rem);
+
+    margin-bottom: 50px;
+
+    text-align: center;
+
+}
