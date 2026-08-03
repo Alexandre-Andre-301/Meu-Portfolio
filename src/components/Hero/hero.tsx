@@ -1,4 +1,4 @@
-import "./Hero.css";
+import "./hero.css";
 import {useHeroAnimation} from "../../hooks/useHeroAnimation";
 
 export default function Hero() {

@@ -1,4 +1,4 @@
-import "./Terminal.css";
+import "./terminal.css";
 
 
 export default function Terminal(){
