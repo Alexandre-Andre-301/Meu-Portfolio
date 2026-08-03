@@ -1,40 +1,75 @@
-# 🛡️ Personal Portfolio - Alexandre Andre
+# React + TypeScript + Vite
 
-![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-a855f7?style=for-the-badge)
-![Role](https://img.shields.io/badge/Role-Future%20Pentester%20%7C%20Fullstack-black?style=for-the-badge&border=a855f7)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Este é o repositório do meu portfólio profissional. O objetivo deste projeto é centralizar os meus principais trabalhos como desenvolvedor Fullstack e demonstrar a minha evolução técnica em Cybersecurity e Ethical Hacking.
+Currently, two official plugins are available:
 
-## 🚀 Tecnologias Utilizadas
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-O site foi construído focando em performance, semântica e uma estética "Cyber-Dark":
+## React Compiler
 
-* **Frontend:** HTML5, CSS3 (Glassmorphism & CSS Variables), JavaScript (ES6+).
-* **Design:** UI inspirada em terminais de segurança e dashboards NOC.
-* **Deployment:** GitHub Pages / Vercel.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 📂 Estrutura de Projetos
+## Expanding the ESLint configuration
 
-O portfólio está dividido em duas categorias principais para facilitar a análise técnica:
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-1.  **Advanced Deployments:** Sistemas complexos que utilizam **Python (Flask)**, **SQL** e autenticação segura (Ex: *ScholarFlow Pro*, *Quiz Interativo*, *ContaCerta*).
-2.  **Core Basics:** Projetos de fundamentos em **JavaScript** para demonstração de lógica e manipulação de DOM (Ex: *To-Do List*, *Calculadora*).
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-## 🛠️ Security Mindset (Pentesting)
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-Este portfólio não é apenas um site estático. Ele foi desenvolvido com princípios de segurança em mente:
-- **Sanitização de Inputs:** Práticas aplicadas nos projetos backend para evitar SQLi e XSS.
-- **Ambiente:** Desenvolvido e testado em ambiente **Linux (Xubuntu)**.
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 
-## 📬 Contacto
+```
 
-Se quiseres colaborar em algum projeto de segurança ou desenvolvimento, podes encontrar-me em:
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-* **Email:** [alexandresjandre301@gmail.com](mailto:alexandresjandre301@gmail.com)
-* **LinkedIn:** https://www.linkedin.com/in/alexandre-andr%C3%A9-058044294/
-* **Portfólio Online:** https://alexandre-andre-301.github.io/Meu-Portifolio/index.html
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
----
-<p align="center">
-  "Stealth is the key to a successful operation." 💻🔒
-</p>
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+
+```
