@@ -14,7 +14,7 @@ export default function Skills() {
 
     return (
 
-        <section className="skills-section">
+        <section className="skills-section" id="skills">
 
 
             <div 
