@@ -1,17 +1,16 @@
+import type { Skill } from "../../data/skills";
 import { useEffect, useRef } from "react";
 import { animate } from "animejs";
-import type { Skill } from "../../data/skills";
+import "./skills.css";
 
 
 interface Props {
 
+
     skill: Skill;
 
-    active: boolean;
+    onClick:()=>void;
 
-    inactive: boolean;
-
-    onClick: () => void;
 
 }
 
@@ -21,18 +20,12 @@ export default function SkillCard({
 
     skill,
 
-    active,
-
-    inactive,
-
     onClick
 
-}: Props) {
+}:Props){
 
 
     const cardRef = useRef<HTMLDivElement>(null);
-
-    const detailsRef = useRef<HTMLDivElement>(null);
 
 
 
@@ -45,18 +38,11 @@ export default function SkillCard({
 
         animate(cardRef.current,{
 
-            scale: active ? 1.06 : 1,
+            translateY:[20,0],
 
-            translateY: active ? -12 : 0,
+            opacity:[0,1],
 
-            boxShadow: active
-
-            ? `0 0 35px ${skill.color}`
-
-            : "0 0 0 rgba(0,0,0,0)",
-
-
-            duration:500,
+            duration:600,
 
             ease:"outExpo"
 
@@ -64,71 +50,29 @@ export default function SkillCard({
         });
 
 
-
-    },[active, skill.color]);
-
-
-
-
-
-    useEffect(()=>{
-
-
-        if(active && detailsRef.current){
-
-
-            animate(detailsRef.current,{
-
-                opacity:[0,1],
-
-                translateY:[20,0],
-
-                duration:400,
-
-                delay:100,
-
-                ease:"outExpo"
-
-            });
-
-
-        }
-
-
-    },[active]);
-
+    },[]);
 
 
 
 
     return (
 
-        <div
 
+        <div
 
             ref={cardRef}
 
-
-            className={`
-
-                skill-card
-
-                ${active ? "active" : ""}
-
-                ${inactive ? "inactive" : ""}
-
-            `}
+            className="skill-card"
 
 
             style={{
 
-                "--skill-color": skill.color
+                "--skill-color":skill.color
 
             } as React.CSSProperties}
 
 
             onClick={onClick}
-
 
 
         >
@@ -158,55 +102,10 @@ export default function SkillCard({
 
 
 
-
-            {
-
-            active && (
-
-
-                <div
-
-                    ref={detailsRef}
-
-                    className="skill-details"
-
-                >
-
-
-                    <ul>
-
-
-                    {
-
-                    skill.description.map((item,index)=>(
-
-
-                        <li key={index}>
-
-                            ✓ {item}
-
-                        </li>
-
-
-                    ))
-
-                    }
-
-
-                    </ul>
-
-
-                </div>
-
-
-            )
-
-            }
-
-
-
         </div>
 
+
     )
+
 
 }

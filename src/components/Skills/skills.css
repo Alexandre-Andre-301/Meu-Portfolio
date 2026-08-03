@@ -303,3 +303,156 @@
     }
 
 }
+
+/* ==========================
+   SKILL MODAL
+========================== */
+
+
+.skill-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.75);
+
+    backdrop-filter:blur(8px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:999;
+
+
+}
+
+
+
+.skill-modal{
+
+
+    width:420px;
+
+    max-width:90%;
+
+    min-height:350px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--skill-color);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    text-align:center;
+
+
+    box-shadow:
+
+    0 0 40px var(--skill-color);
+
+
+
+    position:relative;
+
+
+}
+
+
+
+.skill-modal::before{
+
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        var(--skill-color),
+
+        transparent 70%
+
+    );
+
+
+    opacity:.15;
+
+    pointer-events:none;
+
+
+}
+
+
+
+.skill-close{
+
+
+    position:absolute;
+
+    right:20px;
+
+    top:15px;
+
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:30px;
+
+
+}
+
+
+
+.modal-icon img{
+
+
+    width:90px;
+
+    height:90px;
+
+
+}
+
+
+
+.skill-modal h2{
+
+
+    margin:20px 0;
+
+    color:var(--skill-color);
+
+
+}
+
+
+
+.skill-details p{
+
+
+    color:var(--text-secondary);
+
+    margin:12px 0;
+
+    text-align:left;
+
+
+}

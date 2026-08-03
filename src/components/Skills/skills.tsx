@@ -1,35 +1,70 @@
 import { useState } from "react";
 import SkillCard from "./SkillCard";
+import SkillModal from "./SkillModal.tsx";
 import { skills } from "../../data/skills";
-import "./skills.css"
+import type { Skill } from "../../data/skills";
+
 
 export default function Skills() {
 
-    const [activeSkill, setActiveSkill] = useState<number | null>(null);
+
+    const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
+
+
 
     return (
 
-        <section className="skills" >
+        <section className="skills-section">
 
-            <div className="skills-grid" id="skills">
 
-                {skills.map((skill, index) => (
+            <div 
+                className={`skills-grid ${
+                    selectedSkill ? "blur" : ""
+                }`}
+            >
+
+
+                {
+                skills.map((skill)=>(
+
 
                     <SkillCard
+
                         key={skill.name}
+
                         skill={skill}
-                        active={activeSkill === index}
-                        inactive={activeSkill !== index}
+
                         onClick={() =>
-                            setActiveSkill(
-                                activeSkill === index ? null : index
-                            )
+                            setSelectedSkill(skill)
                         }
+
                     />
 
-                ))}
+
+                ))
+                }
+
 
             </div>
+
+
+
+            {
+            selectedSkill && (
+
+                <SkillModal
+
+                    skill={selectedSkill}
+
+                    onClose={() =>
+                        setSelectedSkill(null)
+                    }
+
+                />
+
+            )
+            }
+
 
         </section>
 
