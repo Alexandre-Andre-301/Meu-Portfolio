@@ -75,7 +75,7 @@ return (
         (
         <div className="project-placeholder">
 
-            <FaCog ref={cogRef}/>
+            <FaCog />
 
             <span>
                 Em produção

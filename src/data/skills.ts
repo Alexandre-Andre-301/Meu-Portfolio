@@ -21,7 +21,8 @@ export const skills: Skill[] = [
             "Componentização de interfaces",
             "Hooks e gerenciamento de estado",
             "Criação de aplicações modernas",
-            "Integração com APIs REST"
+            "Integração com APIs REST",
+            " React Router para navegação SPA",
         ]
     },
 
@@ -33,7 +34,8 @@ export const skills: Skill[] = [
         description: [
             "Tipagem estável",
             "Código escalável",
-            "Melhor manutenção de projetos"
+            "Melhor manutenção e escalabilidade",
+            "Redução de erros em runtime"
         ]
     },
 
