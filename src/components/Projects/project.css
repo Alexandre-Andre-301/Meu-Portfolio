@@ -242,3 +242,45 @@ font-weight:
 
 
 }
+/* ================================
+   PROJECT PLACEHOLDER
+================================ */
+.project-placeholder{
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:15px;
+
+    color:var(--primary);
+
+}
+
+
+.project-placeholder svg{
+
+    width:90px;
+
+    height:90px;
+
+}
+
+
+.project-placeholder span{
+
+    font-size:.9rem;
+
+    color:var(--text-secondary);
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}

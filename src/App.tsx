@@ -5,7 +5,7 @@ import Projects from "./components/Projects/project";
 import Skills from "./components/Skills/skills";
 import Terminal from "./components/Terminal/terminal";
 import Contact from "./components/Contact/Contact";
-import Footer from "./components/Contact/footer";
+import Footer from "./components/Footer/footer";
 import MatrixBackground from "./Background/MatrixBackground";
 
 

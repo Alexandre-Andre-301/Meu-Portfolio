@@ -53,7 +53,7 @@ export const skills: Skill[] = [
 
     {
         name: "FastAPI",
-        icon: "https://avatars.githubusercontent.com/u/156354296?s=200&v=4",
+        icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg",
         color: "#009688",
         description: [
             "Construção de APIs REST",
@@ -85,22 +85,22 @@ export const skills: Skill[] = [
     },
 
 
-    {
+   {
         name: "Cybersecurity",
-        icon: "",
-        color: "#9b5cff",
+        icon: "https://banner2.cleanpng.com/lnd/20240613/hhe/aztvxe5uc.webp",
+        color: "#ef4444",
         description: [
             "OWASP Top 10",
             "Segurança Web",
             "Linux",
             "Metodologias de Pentest",
-            "kali linux"
-        ]
+            "Kali Linux"
+    ]
     },
     {
         name: "Linux",
         icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg",
-        color: 'ffffff',
+        color: "#ffffff",
         description:[
         "Administração de ambientes Linux",
         "Uso avançado do terminal e shell scripting",

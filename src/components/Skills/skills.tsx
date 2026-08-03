@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SkillCard from "./SkillCard";
 import { skills } from "../../data/skills";
+import "./skills.css"
 
 export default function Skills() {
 
@@ -8,9 +9,9 @@ export default function Skills() {
 
     return (
 
-        <section className="skills">
+        <section className="skills" >
 
-            <div className="skills-grid">
+            <div className="skills-grid" id="skills">
 
                 {skills.map((skill, index) => (
 

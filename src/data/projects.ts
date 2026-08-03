@@ -1,16 +1,20 @@
+import telemetyImage from "../assets/ipil-telemetry.png"
+import quizImage from "../assets/how much u know me.png"
+import schoolImage from "../assets/scholarflow-pro.png"
+import contaImage from "../assets/conta Certa.jpg"
 export interface Project {
 
     name:string;
 
     description:string;
 
-    image:string;
+    image ?:string;
 
     status:string;
 
     technologies:string[];
 
-    github:string;
+    github?:string;
 
     demo?:string;
 
@@ -27,7 +31,7 @@ export const projects:Project[] = [
         description:
         "Quiz interativo com autenticação, perguntas dinâmicas e sistema de ranking.",
 
-        image:"src/assets/how much u know me.png",
+        image:quizImage,
 
         status:"Online",
 
@@ -53,7 +57,7 @@ export const projects:Project[] = [
         description:
         "Sistema académico para gestão e visualização de informações escolares.",
 
-        image:"src/assets/scholarflow-pro.png",
+        image:schoolImage,
 
         status:"Beta",
 
@@ -66,6 +70,8 @@ export const projects:Project[] = [
 
         github:
         "https://github.com/Alexandre-Andre-301/ScholarFlow-Pro"
+        ,
+        demo: "https://scholarflow-pro.onrender.com/login"
 
     },
 
@@ -77,7 +83,7 @@ export const projects:Project[] = [
         description:
         "Sistema de gestão de inventário e vendas para estabelecimentos comerciais.",
 
-        image:"/images/contacerta.png",
+        image: contaImage,
 
         status:"Beta",
 
@@ -101,7 +107,7 @@ export const projects:Project[] = [
         description:
         "Dashboard de monitorização de telemetria com foco em performance e UX técnica.",
 
-        image:"src/assets/ipil-telemetry.png",
+        image:telemetyImage,
 
         status:"Online",
 
@@ -119,7 +125,27 @@ export const projects:Project[] = [
 
     },
 
+    {
 
-    
+        name:"Right Way",
+
+        description:
+        "Plataforma educacional criada para auxiliar estudantes na descoberta de percursos académicos e profissionais.",
+
+        image:"",
+
+        status:"Em produção",
+
+        technologies:[
+            "FastAPI",
+            "SQL",
+            "TypeScript",
+            "React"
+        ],
+
+        demo:
+        "https://right-way-frontend.vercel.app/"
+
+    } 
 
 ];
